@@ -58,3 +58,14 @@ Other optional arguments
 -d|--days <days> Default 15
 ```
 
+### Remove out-of-date images
+
+You can run the following command to remove the images created more than 30 days (720h) ago:
+
+```sh
+docker image prune -a --force --filter "until=720h"
+```
+
+
+
+
