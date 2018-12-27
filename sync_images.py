@@ -29,7 +29,7 @@ def help():
 
 
 def normalize_repo(repo):
-    repo_names = repo.split('/')
+    repo_names = repo.split('/', 2)
     if len(repo_names) == 1:
         repo_names = ['docker.io', 'library', repo_names[0]]
     if len(repo_names) == 2:
