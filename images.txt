@@ -62,3 +62,4 @@ gcr.io/google_containers/zeppelin
 gcr.io/google_containers/busybox
 gcr.io/google_containers/coredns
 
+gcr.io/knative-samples/autoscale-go
