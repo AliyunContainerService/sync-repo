@@ -1,15 +1,44 @@
 # My favorite
+
+
+quay.io/coreos/kube-rbac-proxy=registry.cn-hangzhou.aliyuncs.com/coreos_containers/kube-rbac-proxy
+quay.io/coreos/monitoring-grafana=registry.cn-hangzhou.aliyuncs.com/coreos_containers/monitoring-grafana
+quay.io/coreos/kube-state-metrics=registry.cn-hangzhou.aliyuncs.com/coreos_containers/kube-state-metrics
 quay.io/coreos/hyperkube=registry.cn-hangzhou.aliyuncs.com/coreos_containers/hyperkube
 quay.io/coreos/configmap-reload=registry.cn-hangzhou.aliyuncs.com/coreos_containers/configmap-reload
 quay.io/coreos/prometheus-config-reloader=registry.cn-hangzhou.aliyuncs.com/coreos_containers/prometheus-config-reloader
 quay.io/coreos/prometheus-operator=registry.cn-hangzhou.aliyuncs.com/coreos_containers/prometheus-operator
+quay.io/coreos/grafana-watcher
 quay.io/prometheus/alertmanager
 quay.io/prometheus/prometheus
-quay.io/coreos/grafana-watcher
 
+
+gcr.io/knative-releases/github.com/knative/build/cmd/creds-init=registry.cn-hangzhou.aliyuncs.com/knative-mirror/build-creds-init
+gcr.io/knative-releases/github.com/knative/build/cmd/git-init=registry.cn-hangzhou.aliyuncs.com/knative-mirror/build-git-init
+gcr.io/knative-releases/github.com/knative/build/cmd/nop=registry.cn-hangzhou.aliyuncs.com/knative-mirror/build-nop
+gcr.io/knative-releases/github.com/knative/build/cmd/controller=registry.cn-hangzhou.aliyuncs.com/knative-mirror/build-controller
+gcr.io/knative-releases/github.com/knative/build/cmd/webhook=registry.cn-hangzhou.aliyuncs.com/knative-mirror/build-webhook
+gcr.io/knative-releases/github.com/knative/serving/cmd/autoscaler=registry.cn-hangzhou.aliyuncs.com/knative-mirror/serving-autoscaler
+gcr.io/knative-releases/github.com/knative/serving/cmd/controller=registry.cn-hangzhou.aliyuncs.com/knative-mirror/serving-controller
+gcr.io/knative-releases/github.com/knative/serving/cmd/webhook=registry.cn-hangzhou.aliyuncs.com/knative-mirror/serving-webhook
+gcr.io/knative-releases/github.com/knative/serving/cmd/activator=registry.cn-hangzhou.aliyuncs.com/knative-mirror/serving-activator
+gcr.io/knative-releases/github.com/knative/serving/cmd/queue=registry.cn-hangzhou.aliyuncs.com/knative-mirror/serving-queue
+gcr.io/cloud-builders/gcs-fetcher=registry.cn-hangzhou.aliyuncs.com/cloud-builders/gcs-fetcher
+gcr.io/knative-samples/autoscale-go=registry.cn-hangzhou.aliyuncs.com/knative-samples/autoscale-go
+#gcr.io/kaniko-project/executor=registry.cn-hangzhou.aliyuncs.com/cloud-builders/kaniko-executor
+
+gcr.io/google_containers/fluentd-elasticsearch
+gcr.io/google_containers/pause
+gcr.io/google_containers/etcd
+gcr.io/google_containers/kube-proxy
+gcr.io/google_containers/kube-scheduler
+gcr.io/google_containers/kube-apiserver
+gcr.io/google_containers/kubernetes-dashboard-amd64
+gcr.io/google_containers/kube-controller-manager
 gcr.io/google-containers/minikube-nvidia-driver-installer
 gcr.io/google-containers/nvidia-gpu-device-plugin
 gcr.io/google_containers/coredns
+
 quay.io/kubernetes-ingress-controller/nginx-ingress-controller
 quay.io/kubernetes-service-catalog/service-catalog=registry.cn-hangzhou.aliyuncs.com/kubernetes-service-catalog/service-catalog
 
@@ -62,4 +91,4 @@ gcr.io/google_containers/zeppelin
 gcr.io/google_containers/busybox
 gcr.io/google_containers/coredns
 
-gcr.io/knative-samples/autoscale-go
+
