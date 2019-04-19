@@ -10,6 +10,8 @@ import datetime
 import time
 import dateutil.parser
 import re
+import subprocess
+import json
 
 
 tag_filters = ['canary$', 'dev$', '.*-alpha.*']
@@ -46,6 +48,13 @@ def searchTags(url, key):
         print('Failed to list image tags with error code:%d message:%s' % (r.status_code, r.text))
         return {}
 
+def run(cmd):
+    return subprocess.check_output(cmd, shell=True)
+
+def searchTagsWith(cmd, key):
+    output = run(cmd)
+    print('Search repository %s with cmd %s ...' % (repo, cmd))
+    return json.loads(output).get("data").get(key, [])
 
 def list_repo_tags(client, repo):
     result = []
@@ -66,6 +75,21 @@ def list_repo_tags(client, repo):
             timeUpload = float(image['start_ts']) * 1000
             tag = image['name']
             if len(tags) > 0 and timeUpload > timestamp:
+                result.append(tag)
+    elif repo_names[0].endswith("aliyuncs.com"):
+        # url = 'https://quay.io/api/v1/repository/%s/%s/tag/' % (repo_names[1], repo_names[2])
+        # | jq '.data'
+        cmd = "aliyun cr GET  /repos/%s/%s/tags --endpoint cr.cn-hangzhou.aliyuncs.com"  % (repo_names[1], repo_names[2])
+        tags = searchTagsWith(cmd, 'tags')
+        if len(tags) > 0:
+            print("Sync repo %s/%s: " % (repo_names[1], repo_names[2]))
+        for image in tags:
+            timeUpload = float(image['imageUpdate']) #* 1000
+            tag = image['tag']
+            # print("image tags: %s, timeUpload: %s, start_time %s" % (tag, timeUpload, timestamp))
+            # Only list the layer with tag and later than timestamp
+            if len(tags) > 0 and timeUpload > timestamp:
+                print("image tags: %s, timeUpload: %s, start_time %s" % (tag, timeUpload, timestamp))
                 result.append(tag)
     else:
         url = 'https://%s/v2/%s/%s/tags/list' % (repo_names[0], repo_names[1], repo_names[2])
@@ -99,11 +123,11 @@ def sync_repo(client, registry, namespace, insecure_registry, repo, newName):
     for tag in tags:
         try:
             print('Pulling %s:%s' % (repo, tag))
-            image = client.images.pull(repo, tag=tag, insecure_registry=insecure_registry)
+            image = client.images.pull(repo, tag=tag)
             print('Tagging %s:%s %s:%s' % (repo, tag, new_repo_name, tag))
             image.tag(new_repo_name, tag)
             print('Pushing repository %s:%s ...' % (new_repo_name, tag))
-            client.images.push(new_repo_name, tag=tag, insecure_registry=insecure_registry)
+            client.images.push(new_repo_name, tag=tag)
         except Exception:
             traceback.print_exc()
     print('Complete the sync of repository %s' % repo)

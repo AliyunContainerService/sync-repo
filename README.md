@@ -21,6 +21,7 @@ Edit the images.txt of the image repositories for syncing
 ```
 quay.io/coreos/prometheus-operator=registry.cn-hangzhou.aliyuncs.com/coreos_containers/prometheus-operator
 gcr.io/google_containers/pause-amd64
+
 ```
 
 Each line will be one repo definition
@@ -31,8 +32,11 @@ or
 
 ```source_repo``` Sync the source repo to default target repo, which is using default registry, namespace and the same name of the source repo.
 
+In case to sync private repos of aliyun registry cross regions, you have to configure your aliyun cli before you get start, pls refer to [aliyun-cli](https://help.aliyun.com/document_detail/110341.html?spm=a2c4g.11186623.6.544.262e17a4ZH9dOt)
 
-
+```
+registry.cn-hangzhou.aliyuncs.com/eric-dev/debug=registry.ap-southeast-1.aliyuncs.com/eric-dev/debug
+```
 
 ### Usage
 
@@ -65,7 +69,3 @@ You can run the following command to remove the images created more than 30 days
 ```sh
 docker image prune -a --force --filter "until=720h"
 ```
-
-
-
-
