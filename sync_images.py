@@ -79,7 +79,8 @@ def list_repo_tags(client, repo):
     elif repo_names[0].endswith("aliyuncs.com"):
         # url = 'https://quay.io/api/v1/repository/%s/%s/tag/' % (repo_names[1], repo_names[2])
         # | jq '.data'
-        cmd = "aliyun cr GET  /repos/%s/%s/tags --endpoint cr.cn-hangzhou.aliyuncs.com"  % (repo_names[1], repo_names[2])
+        endpoint = repo_names[0].split(".")[1]
+        cmd = "aliyun cr GET  /repos/%s/%s/tags --endpoint cr.%s.aliyuncs.com"  % (repo_names[1], repo_names[2], endpoint)
         tags = searchTagsWith(cmd, 'tags')
         if len(tags) > 0:
             print("Sync repo %s/%s: " % (repo_names[1], repo_names[2]))

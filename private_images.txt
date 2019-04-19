@@ -1,3 +1,5 @@
 # <from_region_repo>=<to_another_region_repo>
 # configure your aliyun cli before you start, refer to https://help.aliyun.com/document_detail/110341.html?spm=a2c4g.11186623.6.544.262e17a4ZH9dOt
+
+registry.cn-shanghai.aliyuncs.com/eric-dev/nginx=registry.ap-southeast-1.aliyuncs.com/eric-dev/nginx
 registry.cn-hangzhou.aliyuncs.com/eric-dev/debug=registry.ap-southeast-1.aliyuncs.com/eric-dev/debug
