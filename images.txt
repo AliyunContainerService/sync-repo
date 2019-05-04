@@ -8,7 +8,8 @@ quay.io/coreos/hyperkube=registry.cn-hangzhou.aliyuncs.com/coreos_containers/hyp
 quay.io/coreos/configmap-reload=registry.cn-hangzhou.aliyuncs.com/coreos_containers/configmap-reload
 quay.io/coreos/prometheus-config-reloader=registry.cn-hangzhou.aliyuncs.com/coreos_containers/prometheus-config-reloader
 quay.io/coreos/prometheus-operator=registry.cn-hangzhou.aliyuncs.com/coreos_containers/prometheus-operator
-quay.io/coreos/grafana-watcher
+quay.io/coreos/grafana-watcher=registry.cn-hangzhou.aliyuncs.com/coreos_containers/grafana-watcher
+
 quay.io/prometheus/alertmanager
 quay.io/prometheus/prometheus
 
@@ -38,6 +39,7 @@ gcr.io/google_containers/kube-controller-manager
 gcr.io/google-containers/minikube-nvidia-driver-installer
 gcr.io/google-containers/nvidia-gpu-device-plugin
 gcr.io/google_containers/coredns
+gcr.io/google_containers/metrics-server-amd64
 
 quay.io/kubernetes-ingress-controller/nginx-ingress-controller
 quay.io/kubernetes-service-catalog/service-catalog=registry.cn-hangzhou.aliyuncs.com/kubernetes-service-catalog/service-catalog
