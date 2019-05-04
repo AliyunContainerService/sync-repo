@@ -1,5 +1,11 @@
 # My favorite
 
+gcr.io/linkerd-io/proxy=registry.cn-hangzhou.aliyuncs.com/linkerd-io-mirror/proxy
+gcr.io/linkerd-io/grafana=registry.cn-hangzhou.aliyuncs.com/linkerd-io-mirror/grafana
+gcr.io/linkerd-io/proxy-init=registry.cn-hangzhou.aliyuncs.com/linkerd-io-mirror/proxy-init
+gcr.io/linkerd-io/web=registry.cn-hangzhou.aliyuncs.com/linkerd-io-mirror/web
+gcr.io/linkerd-io/controller=registry.cn-hangzhou.aliyuncs.com/linkerd-io-mirror/controller
+
 
 quay.io/coreos/kube-rbac-proxy=registry.cn-hangzhou.aliyuncs.com/coreos_containers/kube-rbac-proxy
 quay.io/coreos/monitoring-grafana=registry.cn-hangzhou.aliyuncs.com/coreos_containers/monitoring-grafana
@@ -52,6 +58,7 @@ gcr.io/google_containers/kube-registry-proxy
 gcr.io/google-containers/elasticsearch
 gcr.io/google-containers/fluentd-elasticsearch
 gcr.io/k8s-minikube/storage-provisioner
+gcr.io/k8s-minikube/gvisor-addon
 gcr.io/kubernetes-helm/tiller
 gcr.io/google_containers/kube-proxy-amd64
 gcr.io/google_containers/kube-scheduler-amd64
