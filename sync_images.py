@@ -151,7 +151,8 @@ try:
     (options, args) = getopt.getopt(sys.argv[1:], 'f:d:r:n:ih', ['file=', 'days=', 'registry=', 'namespace=', 'insecure_registry', 'help'])
 except getopt.GetoptError:
     help()
-
+namespace = DEFAULT_NAMESPACE
+registry = DEFAULT_REGISTRY
 for option in options:
     if option[0] == '-f' or option[0] == '--file':
         filename = option[1]
@@ -192,8 +193,6 @@ for line in lines:
             repo=line
             repo_names = normalize_repo(repo)
             new_repo = repo_names[2]
-            namespace = DEFAULT_NAMESPACE
-            registry = DEFAULT_REGISTRY
         else:
             repo = repos[0]
             repo_names = normalize_repo(repos[1])
