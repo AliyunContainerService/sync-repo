@@ -1,5 +1,5 @@
 # My favorite
-
+gcr.io/google_containers/spartakus-amd64
 gcr.io/linkerd-io/proxy=registry.cn-hangzhou.aliyuncs.com/linkerd-io-mirror/proxy
 gcr.io/linkerd-io/grafana=registry.cn-hangzhou.aliyuncs.com/linkerd-io-mirror/grafana
 gcr.io/linkerd-io/proxy-init=registry.cn-hangzhou.aliyuncs.com/linkerd-io-mirror/proxy-init
