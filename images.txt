@@ -59,6 +59,7 @@ gcr.io/google-containers/elasticsearch
 gcr.io/google-containers/fluentd-elasticsearch
 gcr.io/k8s-minikube/storage-provisioner
 gcr.io/k8s-minikube/gvisor-addon
+gcr.io/k8s-minikube/kicbase
 gcr.io/kubernetes-helm/tiller
 gcr.io/google_containers/kube-proxy-amd64
 gcr.io/google_containers/kube-scheduler-amd64
