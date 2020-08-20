@@ -14,7 +14,7 @@ import subprocess
 import json
 
 
-tag_filters = ['canary$', 'dev$', '.*-alpha.*']
+tag_filters = ['git-.*', 'canary$', 'dev$', 'dev-.*', 'build-.*', '.*-alpha.*']
 
 
 def match_tag(tag):
@@ -187,6 +187,7 @@ for line in lines:
     if line == '':
         continue
     try:
+        ns = namespace
         repos = line.split("=")
         if len(repos) == 1:
             # Get the repo name
@@ -197,8 +198,8 @@ for line in lines:
             repo = repos[0]
             repo_names = normalize_repo(repos[1])
             registry = repo_names[0]
-            namespace = repo_names[1]
+            ns = repo_names[1]
             new_repo = repo_names[2]
-        sync_repo(client, registry, namespace, insecure_registry, repo, new_repo)
+        sync_repo(client, registry, ns, insecure_registry, repo, new_repo)
     except Exception:
         traceback.print_exc()
