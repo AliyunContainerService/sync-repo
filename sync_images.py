@@ -35,7 +35,10 @@ def normalize_repo(repo):
     if len(repo_names) == 1:
         repo_names = ['docker.io', 'library', repo_names[0]]
     if len(repo_names) == 2:
-        repo_names = ['docker.io', repo_names[0], repo_names[1]]
+        if '.' in repo_names[0]:
+            repo_names = [repo_names[0], '', repo_names[1]] # Like k8s.gcr.io/kube-apiserver
+        else:
+            repo_names = ['docker.io', repo_names[0], repo_names[1]]
     return repo_names
 
 
@@ -93,7 +96,10 @@ def list_repo_tags(client, repo):
                 print("image tags: %s, timeUpload: %s, start_time %s" % (tag, timeUpload, timestamp))
                 result.append(tag)
     else:
-        url = 'https://%s/v2/%s/%s/tags/list' % (repo_names[0], repo_names[1], repo_names[2])
+        if repo_names[1] == '':
+            url = 'https://%s/v2/%s/tags/list' % (repo_names[0], repo_names[2])
+        else:
+            url = 'https://%s/v2/%s/%s/tags/list' % (repo_names[0], repo_names[1], repo_names[2])
         manifest = searchTags(url, u'manifest')
         for key in manifest:
             image = manifest[key]
