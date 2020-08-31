@@ -7,12 +7,13 @@ This helper project will synchronize Docker image from popular public Docker Reg
 * Sync the tagged images from given repo updated within 15 days (default)
 
 
-### Prequesite
+NOTE: The project supports both Python2 and Python3
+
+### Prerequisite
 
 ```
-pip install docker
+pip install docker[tls]
 pip install python-dateutil
-pip install requests[security]
 ```
 
 ### Editing image lists
